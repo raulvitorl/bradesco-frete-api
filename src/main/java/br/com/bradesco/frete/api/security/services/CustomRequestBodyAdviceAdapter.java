@@ -1,4 +1,4 @@
-package br.com.bradesco.frete.api.helpers;
+package br.com.bradesco.frete.api.security.services;
 
 import java.lang.reflect.Type;
 
@@ -10,8 +10,6 @@ import org.springframework.http.HttpInputMessage;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.RequestBodyAdviceAdapter;
-
-import br.com.bradesco.frete.api.security.services.LoggingService;
 
 @ControllerAdvice
 public class CustomRequestBodyAdviceAdapter extends RequestBodyAdviceAdapter {

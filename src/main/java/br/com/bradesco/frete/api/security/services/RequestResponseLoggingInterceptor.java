@@ -1,4 +1,4 @@
-package br.com.bradesco.frete.api.helpers;
+package br.com.bradesco.frete.api.security.services;
 
 
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package br.com.bradesco.frete.api.helpers;
+package br.com.bradesco.frete.api.security.services;
 
 import javax.servlet.DispatcherType;
 import javax.servlet.http.HttpServletRequest;
@@ -9,8 +9,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-
-import br.com.bradesco.frete.api.security.services.LoggingService;
 
 @Component
 public class LogInterceptor implements HandlerInterceptor {
