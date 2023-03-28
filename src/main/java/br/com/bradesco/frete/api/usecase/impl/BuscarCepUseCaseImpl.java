@@ -30,7 +30,7 @@ public class BuscarCepUseCaseImpl implements BuscarCepUseCase{
 	
 	@Override
 	public ResponseEntity<?> execute(ConsultaCep consultaCep,HttpServletRequest request) {
-		if(consultaCep.getCep()==null){
+		if(consultaCep.getCep()==null || consultaCep.getCep().isBlank()){
 			String errorMessage = "Cep não informado na requesição.";
 			HttpStatus errorStatus = HttpStatus.PRECONDITION_FAILED;
 			log.error(errorMessage);

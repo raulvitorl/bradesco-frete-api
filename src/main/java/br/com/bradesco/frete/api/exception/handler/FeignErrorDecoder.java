@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import br.com.bradesco.frete.api.exception.FeignCustomException;
 import feign.Response;
 import feign.codec.ErrorDecoder;
-import lombok.var;
 
 public class FeignErrorDecoder implements ErrorDecoder {
 
@@ -30,8 +29,7 @@ public class FeignErrorDecoder implements ErrorDecoder {
 			final var body = response.body();
 			StringWriter writer = new StringWriter();
 			IOUtils.copy(body.asInputStream(), writer, "UTF-8");
-			final var details = writer.toString();
-			return details;           
+			return writer.toString();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

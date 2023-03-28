@@ -15,8 +15,8 @@ import springfox.documentation.spring.web.plugins.Docket;
 public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
-        return new ApiInfo("Geo API", "Api responsável por recuperar localidades", "0.0.3", "Terms of service",
-          new Contact("Tecnologia Concash", "https://concash.com.br", "tecnologia@concash.com.br"),
+        return new ApiInfo("Bradesco Frete API", "Api responsável por recuperar calcular fretes", "0.0.3", "Terms of service",
+          new Contact("Raul Vitor Lopes da Costa", "semurl.com.br", "raulawliet@gmail.com"),
           "Sem Licença Atualmente", "www.semlicenca.com.br", Collections.emptyList());
     }
 	
