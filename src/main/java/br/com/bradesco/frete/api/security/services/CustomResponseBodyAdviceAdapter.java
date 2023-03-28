@@ -1,4 +1,4 @@
-package br.com.bradesco.frete.api.helpers;
+package br.com.bradesco.frete.api.security.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
@@ -10,8 +10,6 @@ import org.springframework.http.server.ServletServerHttpRequest;
 import org.springframework.http.server.ServletServerHttpResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
-
-import br.com.bradesco.frete.api.security.services.LoggingService;
 
 @ControllerAdvice
 public class CustomResponseBodyAdviceAdapter implements ResponseBodyAdvice<Object> {
