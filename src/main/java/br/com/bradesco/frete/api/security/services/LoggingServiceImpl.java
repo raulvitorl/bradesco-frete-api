@@ -8,7 +8,12 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.Level;
 import org.springframework.stereotype.Component;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 
 import lombok.extern.java.Log;
 
@@ -40,12 +45,20 @@ public class LoggingServiceImpl implements LoggingService {
     @Override
     public void logResponse(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object body) {
         StringBuilder stringBuilder = new StringBuilder();
-
+        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        
         stringBuilder.append("RESPONSE ");
         stringBuilder.append("method=[").append(httpServletRequest.getMethod()).append("] ");
         stringBuilder.append("path=[").append(httpServletRequest.getRequestURI()).append("] ");
         stringBuilder.append("responseHeaders=[").append(buildHeadersMap(httpServletResponse)).append("] ");
-        stringBuilder.append("responseBody=[").append(body).append("] ");
+        String json= "";
+		try {
+			json = ow.writeValueAsString(body);
+		} catch (JsonProcessingException e) {
+			log.log(java.util.logging.Level.WARNING, "Falha ao extrair response body.");
+			e.printStackTrace();
+		}
+        stringBuilder.append("responseBody=").append(json).append(" ");
 
         log.info(stringBuilder.toString());
     }

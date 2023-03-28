@@ -93,6 +93,7 @@ public class BuscarCepUseCaseImpl implements BuscarCepUseCase{
 				.cidade(response.getLocalidade())
 				.complemento(response.getComplemento())
 				.estado(response.getUf())
+				.rua(response.getLogradouro())
 				.frete(freteFixo)
 				.build();
 	}
