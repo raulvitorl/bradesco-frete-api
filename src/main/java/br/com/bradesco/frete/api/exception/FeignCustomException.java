@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import feign.FeignException;
 
-@ResponseStatus(code = HttpStatus.SERVICE_UNAVAILABLE, reason = "Servico de consulta de cep indisponivel no momento.")
+@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Cep nao encontrado")
 public class FeignCustomException extends FeignException {
 
 	private static final long serialVersionUID = 4708869922532299246L;

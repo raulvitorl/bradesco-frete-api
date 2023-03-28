@@ -19,6 +19,4 @@ public class CepResource {
 	private String gia;
 	private String ddd;
 	private String siafi;
-	private Long idCidade;
-	private Long idEstado;
 }

@@ -1,5 +1,7 @@
 package br.com.bradesco.frete.api.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,8 +22,8 @@ public class FreteController {
     private final BuscarCepUseCase buscarCepUseCase;
 
     @PostMapping("/v1/consulta-endereco")
-    public ResponseEntity<?> calcularFretePorCep(@RequestBody ConsultaCep consultaCep) {
-        return buscarCepUseCase.execute(consultaCep);
+    public ResponseEntity<?> calcularFretePorCep(@RequestBody ConsultaCep consultaCep,HttpServletRequest request) {
+        return buscarCepUseCase.execute(consultaCep,request);
     }
 
  
